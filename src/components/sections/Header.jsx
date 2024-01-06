@@ -3,10 +3,36 @@ import logo from '../../assets/logo.svg'
 import MenuButton from '../MenuButton'
 import Navigation from '../Navigation'
 import PopupButton from '../PopupButton'
+import { useState, useEffect, useContext } from 'react'
+import { PopupContext } from '../../context/popupContext'
+import makeAjaxRequest from './../../helpers/ajaxCall'
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false)
+  const { openPopup } = useContext(PopupContext)
+
+  const shadow = {
+    boxShadow: scrolled ? '0 5px 10px rgba(0,0,0,.02)' : '',
+  }
+
+  function handlePopUpOpen() {
+    makeAjaxRequest('/', openPopup)
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(true)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <StyledHeader>
+    <StyledHeader style={shadow}>
       <div className='container'>
         <div className='header-left'>
           <div className='logo'>
@@ -37,7 +63,7 @@ function Header() {
             +38 067 607 57 84
           </a>
 
-          <PopupButton />
+          <PopupButton onClickEv={() => handlePopUpOpen()} />
         </div>
       </div>
     </StyledHeader>

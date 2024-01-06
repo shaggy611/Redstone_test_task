@@ -1,7 +1,12 @@
 import styled from 'styled-components'
 
-function PopupButton() {
-  return <StyledBUtton type='button'>Задати запитання</StyledBUtton>
+// eslint-disable-next-line react/prop-types
+function PopupButton({ onClickEv }) {
+  return (
+    <StyledBUtton type='button' onClick={onClickEv}>
+      Задати запитання
+    </StyledBUtton>
+  )
 }
 
 export default PopupButton

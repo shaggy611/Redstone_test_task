@@ -1,17 +1,29 @@
 /* eslint-disable react/prop-types */
 import { styled } from 'styled-components'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 function CategoryItem({ categoryTitle, categoryImg, hoveredColor }) {
   const [position, setPosition] = useState({ x: 0, y: 0 })
+  const itemRef = useRef(null)
 
   const handleMouseMove = (e) => {
-    setPosition({ x: 0, y: 0 })
-    setPosition({ x: e.clientX, y: e.clientY })
+    if (itemRef !== null) {
+      const rect = itemRef.current.getBoundingClientRect()
+      setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top })
+    } else {
+      return
+    }
   }
 
+  useEffect(() => {
+    //console.log(itemRef.current)
+  }, [])
+
   return (
-    <StyledItem color={hoveredColor} onMouseMove={handleMouseMove}>
+    <StyledItem
+      color={hoveredColor}
+      onMouseMove={handleMouseMove}
+      ref={itemRef}>
       <a href='#' className='categoryLink'>
         <span className='title'>{categoryTitle}</span>
         <span className='img'>
@@ -21,8 +33,8 @@ function CategoryItem({ categoryTitle, categoryImg, hoveredColor }) {
           <span
             className='icon'
             style={{
-              transform: `translate(${position.x - 390}px, ${
-                position.y - 420
+              transform: `translate(${position.x - 240}px, ${
+                position.y - 300
               }px)`,
             }}></span>
         </div>

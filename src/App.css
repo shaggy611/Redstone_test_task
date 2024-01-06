@@ -5,6 +5,10 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+
+  @media (min-width: 1820px) {
+    max-width: 1600px;
+  }
 }
 
 html:not(.touch-screen) ::-webkit-scrollbar,
