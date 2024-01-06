@@ -47,6 +47,13 @@ function Header() {
 export default Header
 
 const StyledHeader = styled.header`
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  background-color: #fff;
+
   & .container {
     height: 130px;
     display: -webkit-box;

@@ -25,7 +25,7 @@
 }
 
 body * {
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Inter';
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto';
 }
 
 body {
