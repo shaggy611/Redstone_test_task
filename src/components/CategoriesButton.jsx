@@ -15,6 +15,7 @@ const StyledButton = styled(StyledBUtton).attrs({ as: 'a' })`
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
+  margin-bottom: 70px;
 
   &::before {
     -webkit-transform: translateY(100%);

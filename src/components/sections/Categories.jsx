@@ -37,7 +37,7 @@ export default Categories
 
 const StyledCategories = styled.section`
   & .container {
-    height: calc(100vh - 130px);
+    height: auto;
     padding-top: 50px;
     padding-bottom: 50px;
     position: relative;
@@ -47,7 +47,7 @@ const StyledCategories = styled.section`
     justify-content: space-between;
 
     @media (max-width: 1819px) {
-      height: calc(100vh - 100px);
+      height: auto;
       min-height: 400px;
     }
   }

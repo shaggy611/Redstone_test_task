@@ -33,8 +33,8 @@ function CategoryItem({ categoryTitle, categoryImg, hoveredColor }) {
           <span
             className='icon'
             style={{
-              transform: `translate(${position.x - 240}px, ${
-                position.y - 300
+              transform: `translate(${position.x - 220}px, ${
+                position.y - 280
               }px)`,
             }}></span>
         </div>
