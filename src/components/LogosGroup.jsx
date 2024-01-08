@@ -41,6 +41,19 @@ const StyledLogos = styled.div`
   justify-content: flex-start;
   display: flex;
 
+  @media (max-width: 1024px) {
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 767px) {
+    /* text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
   & a {
     max-width: 110px;
     -webkit-box-flex: 1;
@@ -72,6 +85,10 @@ const StyledLogos = styled.div`
       @media (max-width: 1819px) {
         margin-right: 45px;
       }
+
+      @media (max-width: 767px) {
+        margin-right: 10px;
+      }
     }
 
     &:nth-child(3) {
@@ -85,6 +102,10 @@ const StyledLogos = styled.div`
     & img {
       max-width: 100%;
       vertical-align: top;
+
+      @media (max-width: 767px) {
+        max-width: 80%;
+      }
     }
 
     @media (min-width: 1200px) {

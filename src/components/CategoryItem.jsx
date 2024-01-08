@@ -33,8 +33,8 @@ function CategoryItem({ categoryTitle, categoryImg, hoveredColor }) {
           <span
             className='icon'
             style={{
-              transform: `translate(${position.x - 220}px, ${
-                position.y - 280
+              transform: `translate(${position.x - 64}px, ${
+                position.y - 59
               }px)`,
             }}></span>
         </div>
@@ -46,12 +46,16 @@ function CategoryItem({ categoryTitle, categoryImg, hoveredColor }) {
 export default CategoryItem
 
 const StyledItem = styled.div`
-  padding: 0 15px;
+  padding: 0 5px;
   position: relative;
   text-align: center;
   overflow: hidden;
   width: calc(33.33% - 20px);
   margin-bottom: 10px;
+
+  @media (max-width: 767px) {
+    width: calc(50% - 10px);
+  }
 
   & .title {
     font-size: 26px;
@@ -73,6 +77,11 @@ const StyledItem = styled.div`
     position: absolute;
     left: 0;
     width: 100%;
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+      font-weight: 400;
+    }
   }
 
   & .categoryLink {
@@ -147,17 +156,23 @@ const StyledItem = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
+    max-width: 500px;
     top: 0;
     left: 0;
     cursor: pointer;
 
     & .icon {
       position: absolute;
-      left: 50%;
+      /* left: 50%;
       top: 50%;
-      margin: -60px 0 0 -60px;
-      width: 120px;
-      height: 120px;
+      transform: translate(-50%, -50%); */
+      /* left: 0;
+      top: 0; */
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      max-width: 120px;
+      max-height: 120px;
       border-radius: 100%;
       color: #fff;
       border: 1px solid #fff;
@@ -175,7 +190,6 @@ const StyledItem = styled.div`
       font-size: 14px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      /* transform: translate(-200px, -56px); */
 
       &::before {
         content: '';
@@ -208,8 +222,8 @@ const StyledItem = styled.div`
       @media (min-width: 992px) {
         opacity: 0;
         visibility: hidden;
-        -webkit-transition: opacity 0.3s, visibility 0.3s;
-        transition: opacity 0.3s, visibility 0.3s;
+        -webkit-transition: opacity 0.3s, visibility 0.3s, transform 0.15s ease;
+        transition: opacity 0.3s, visibility 0.3s, transform 0.15s ease;
       }
     }
   }

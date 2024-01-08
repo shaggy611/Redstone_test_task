@@ -64,6 +64,11 @@ const StyledCategories = styled.section`
     -ms-flex-pack: justify;
     justify-content: space-between;
 
+    @media (max-width: 767px) {
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+
     & h2 {
       font-size: 40px;
       font-weight: 600;
@@ -71,6 +76,12 @@ const StyledCategories = styled.section`
       -webkit-box-flex: 1;
       -ms-flex: 1 1 57%;
       flex: 1 1 57%;
+
+      @media (max-width: 767px) {
+        max-width: 100%;
+        font-size: 24px;
+        text-align: center;
+      }
     }
 
     & p {
@@ -86,6 +97,10 @@ const StyledCategories = styled.section`
       @media (max-width: 1819px) {
         padding-left: 5%;
         font-size: 15px;
+      }
+
+      @media (max-width: 767px) {
+        display: none;
       }
     }
   }

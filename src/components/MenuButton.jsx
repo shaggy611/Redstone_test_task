@@ -54,6 +54,10 @@ const StyledButton = styled.button`
     margin-right: 23px;
     position: relative;
 
+    @media (max-width: 767px) {
+      margin-right: 13px;
+    }
+
     & i {
       width: 100%;
       height: 2px;
@@ -97,5 +101,10 @@ const StyledButton = styled.button`
     position: absolute;
     top: 40%;
     left: 47px;
+
+    @media (max-width: 767px) {
+      position: initial;
+      margin-right: 13px;
+    }
   }
 `

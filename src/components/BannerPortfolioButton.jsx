@@ -28,4 +28,8 @@ const StyledButton = styled(StyledBUtton).attrs({ as: 'a' })`
     -ms-transform: translateY(0%);
     transform: translateY(0%);
   }
+
+  @media (max-width: 1024px) {
+    margin: 25px auto;
+  }
 `

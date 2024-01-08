@@ -99,6 +99,11 @@ const StyledHeader = styled.header`
 
   & .header-left {
     display: flex;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   & .logo {
@@ -138,6 +143,16 @@ const StyledHeader = styled.header`
     align-items: inherit;
     display: flex;
 
+    @media (max-width: 767px) {
+      width: 20px;
+    }
+
+    & button {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
     & a {
       font-size: 16px;
       position: relative;
@@ -150,6 +165,11 @@ const StyledHeader = styled.header`
       text-transform: uppercase;
       color: #232323;
       transition: 0.3s;
+
+      @media (max-width: 767px) {
+        font-size: 0;
+        margin-top: -10px;
+      }
 
       &:hover {
         color: #e70000;

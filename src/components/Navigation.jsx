@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import HeaderSubMenu from './HeaderSubMenu'
 
 function Navigation() {
   return (
@@ -7,8 +8,10 @@ function Navigation() {
         <li>
           <a href='#'>Портфоліо</a>
         </li>
-        <li>
+        <li className='sub-menu-children'>
           <a href='#'>Послуги</a>
+          <span className='sub-menu-ico'></span>
+          <HeaderSubMenu />
         </li>
         <li>
           <a href='#'>Брендинг</a>
@@ -30,8 +33,24 @@ const StyledNavigation = styled.nav`
   top: 2px;
   margin-left: 41px;
 
+  @media (max-width: 767px) {
+    display: none;
+  }
+
   & ul {
     list-style: none;
+
+    & .sub-menu-children {
+      position: relative;
+      overflow: visible;
+    }
+
+    & .sub-menu-children:hover > div {
+      /* opacity: 1 !important; */
+      -webkit-clip-path: inset(0 0 0 0);
+      clip-path: inset(0 0 0 0);
+      pointer-events: all;
+    }
   }
 
   & ul li {
@@ -59,6 +78,20 @@ const StyledNavigation = styled.nav`
 
     &:hover {
       color: #e70000;
+    }
+
+    & .sub-menu-ico {
+      display: block;
+      border-left: 1px solid;
+      width: 6px;
+      height: 6px;
+      border-bottom: 1px solid;
+      position: absolute;
+      right: -13px;
+      top: 2px;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
     }
 
     @media (max-width: 1819px) {

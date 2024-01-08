@@ -26,7 +26,7 @@ function Banner() {
                 height='100%'
                 preserveAspectRatio='xMidYMid meet'>
                 <text x='50%' y='97%' strokeWidth='1' textAnchor='middle'>
-                  <tspan className='text-bold'>18</tspan>
+                  <tspan>18</tspan>
                 </text>
               </svg>
             </div>
@@ -96,6 +96,10 @@ const StyledBanner = styled.section`
     margin-bottom: 135px;
   }
 
+  @media (max-width: 767px) {
+    margin-bottom: 80px;
+  }
+
   & .container {
     height: 100vh;
     padding-top: 50px;
@@ -117,6 +121,11 @@ const StyledBanner = styled.section`
       flex-direction: row;
       justify-content: space-between;
       height: 100%;
+
+      @media (max-width: 1024px) {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+      }
     }
 
     & h1 {
@@ -129,14 +138,24 @@ const StyledBanner = styled.section`
       position: relative;
       top: 10px;
 
-      & span {
-        color: #e70000;
-        font-weight: inherit;
-      }
-
       @media (max-width: 1819px) {
         font-size: 46px;
         top: 4px;
+      }
+
+      @media (max-width: 1024px) {
+        text-align: center;
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 30px;
+      }
+
+      & span {
+        color: #e70000;
+        font-weight: inherit;
       }
     }
   }
@@ -149,6 +168,12 @@ const StyledBanner = styled.section`
     opacity: 0;
     animation: ${appear} 1s linear forwards;
     -webkit-animation: ${appear} 1s linear forwards;
+
+    @media (max-width: 1024px) {
+      text-align: center;
+      justify-content: center;
+      margin-top: 60px;
+    }
   }
 
   & .right {
@@ -169,11 +194,15 @@ const StyledBanner = styled.section`
     -webkit-backface-visibility: hidden;
     height: 360px;
     stroke: #e6e6e6;
+
+    @media (max-width: 1024px) {
+      height: 260px;
+    }
   }
 
   & .subtext {
     letter-spacing: 0.05em;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 18px;
     line-height: 1.4;
     color: #424242;
@@ -187,25 +216,28 @@ const StyledBanner = styled.section`
 
   & .experience svg {
     & text {
+      font-weight: 500;
       font-size: 130px;
       letter-spacing: -6px;
       stroke-dasharray: 500;
       stroke-dashoffset: 500;
       fill: transparent;
+      animation: ${draw} 2s linear forwards;
+      -webkit-animation: ${draw} 2s linear forwards;
 
-      @media (min-width: 1200px) {
-        animation: ${draw} 2s linear forwards;
-        -webkit-animation: ${draw} 2s linear forwards;
+      @media (max-width: 1024px) {
+        font-size: 90px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 60px;
       }
     }
 
     & tspan {
       fill: transparent;
-
-      @media (min-width: 1200px) {
-        animation: ${fill_text_2} 0.8s linear forwards 1s;
-        -webkit-animation: ${fill_text_2} 0.8s linear forwards 1s;
-      }
+      animation: ${fill_text_2} 0.8s linear forwards 1s;
+      -webkit-animation: ${fill_text_2} 0.8s linear forwards 1s;
     }
   }
 
@@ -225,6 +257,16 @@ const StyledBanner = styled.section`
     & svg .dashed {
       -webkit-animation: ${dash} 8s linear infinite;
       animation: ${dash} 8s linear infinite;
+    }
+
+    @media (max-width: 1024px) {
+      bottom: 10px;
+    }
+
+    @media (max-width: 1024px) {
+      & svg {
+        width: 70%;
+      }
     }
   }
 `
